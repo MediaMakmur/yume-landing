@@ -1,0 +1,9 @@
+{
+  "name": "devlabs",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "ideal-image-slider": "~1.4.0",
+    "sanitize-css": "~1.1.0"
+  }
+}

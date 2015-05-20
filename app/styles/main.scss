@@ -1,0 +1,24 @@
+// bower:scss
+// endbower
+
+@import "layout/_flexgrid";
+@import "layout/_media-query";
+
+@import "components/_site-header";
+@import "components/_site-main";
+@import "components/_site-footer";
+
+body{
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+#blogger, #brands{
+  @include min-screen(767px) { padding-top: 96px; }
+  @include max-screen(767px) { padding-top: 56px; }
+}
+
+#brand-slider, #blogger-slider{
+  border-radius: 6px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.3),0 0 0 1px rgba(0,0,0,0.08);
+  transition: all 250ms;
+}

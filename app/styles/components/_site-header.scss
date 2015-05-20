@@ -1,0 +1,146 @@
+.site-header{
+  background-color: #fff;
+  z-index: 999;
+  @include min-screen(767px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 96px;
+    margin: auto;
+  }
+  @include max-screen(767px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 56px;
+    font-size: 12px;
+  }
+
+  // 64px di mobile
+  .top-bar{
+    @include min-screen(767px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include max-screen(767px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 56px;
+    }
+  }
+
+  // Dipengaruhi oleh toggle (mobile) selalu muncul di desktop
+  .bottom-bar{
+    transition: all 250ms ease-in;
+    text-transform: uppercase;
+    @include min-screen(767px) {
+      margin-right: 24px;
+      ul{
+        display: flex;
+      }
+      a{
+        margin: 4px;
+        padding: 8px;
+        &:hover{
+          border-bottom: 3px solid black;
+        }
+      }
+      &.show{}
+    }
+    @include max-screen(767px) {
+      display: none;
+      height: 320px;
+      border-bottom: 3px solid black;
+      ul{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      li{
+        display: flex;
+        flex-basis: 50%;
+        flex-grow: 1;
+        &:nth-child(1) {
+          border-top: 2px solid black;
+          border-bottom: 1px solid black;
+          border-right: 1px solid black;
+        }
+        &:nth-child(2) {
+          border-top: 2px solid black;
+          border-bottom: 1px solid black;
+          border-left: 1px solid black;
+        }
+        &:nth-child(3) {
+          border-top: 1px solid black;
+          border-right: 1px solid black;
+        }
+        &:nth-child(4) {
+          border-top: 1px solid black;
+          border-left: 1px solid black;
+        }
+      }
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        &:hover{
+          background-color: rgba(0,0,0,.12);
+        }
+      }
+      &.show{
+        display: flex;
+      }
+    }
+  }
+
+  // logo
+  .logo{
+    @include min-screen(767px) {
+      font-size: 2em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-left: 24px;
+      display: flex;
+      align-items: center;
+      img{
+        max-height: 72px;
+        margin-right: 16px;
+      }
+    }
+    @include max-screen(767px) {
+      font-size: 1.5em;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-left: 16px;
+      display: flex;
+      align-items: center;
+      img{
+        max-height: 36px;
+        margin-right: 16px;
+      }
+    }
+  }
+
+  // tombol toggle
+  .toggle{
+    @include min-screen(767px) {
+      display: none;
+    }
+    @include max-screen(767px) {
+      margin-right: 4px;
+      padding: 12px;
+    }
+  }
+}
