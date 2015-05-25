@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 96px;
+    min-height: 70px;
     margin: auto;
   }
   @include max-screen(767px) {
