@@ -10,6 +10,7 @@
     justify-content: space-between;
     min-height: 72px;
     margin: auto;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
   @include max-screen(767px) {
     position: fixed;
@@ -19,6 +20,7 @@
     flex-direction: column;
     min-height: 56px;
     font-size: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
   }
 
   // 64px di mobile
@@ -27,6 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-shrink: 1;
     }
     @include max-screen(767px) {
       display: flex;
@@ -41,10 +44,12 @@
   .bottom-bar{
     transition: all 250ms ease-in;
     text-transform: uppercase;
+    flex-shrink: 0;
     @include min-screen(767px) {
       margin-right: 24px;
       ul{
         display: flex;
+        flex-shrink: 1;
       }
       a{
         margin: 4px;
@@ -52,12 +57,13 @@
         &:hover{
           border-bottom: 3px solid black;
         }
+        font-size: 14px;
       }
       &.show{}
     }
     @include max-screen(767px) {
       display: none;
-      height: 160px;
+      height: 320px;
       border-bottom: 3px solid black;
       ul{
         width: 100%;
@@ -70,22 +76,28 @@
         flex-basis: 50%;
         flex-grow: 1;
         &:nth-child(1) {
-          border-top: 2px solid black;
-          border-bottom: 1px solid black;
-          border-right: 1px solid black;
+          border-top: 2px solid rgba(238, 98, 144, .26);
+          border-bottom: 1px solid rgba(238, 98, 144, .26);
+          border-right: 1px solid rgba(238, 98, 144, .26);
         }
         &:nth-child(2) {
-          border-top: 2px solid black;
-          border-bottom: 1px solid black;
-          border-left: 1px solid black;
+          border-top: 2px solid rgba(238, 98, 144, .26);
+          border-bottom: 1px solid rgba(238, 98, 144, .26);
+          border-left: 1px solid rgba(238, 98, 144, .26);
         }
         &:nth-child(3) {
-          border-top: 1px solid black;
-          border-right: 1px solid black;
+          border-top: 1px solid rgba(238, 98, 144, .26);
+          border-right: 1px solid rgba(238, 98, 144, .26);
+          border-bottom: 1px solid rgba(238, 98, 144, .26);
         }
         &:nth-child(4) {
-          border-top: 1px solid black;
-          border-left: 1px solid black;
+          border-top: 1px solid rgba(238, 98, 144, .26);
+          border-left: 1px solid rgba(238, 98, 144, .26);
+          border-bottom: 1px solid rgba(238, 98, 144, .26);
+        }
+        &:nth-child(5) {
+          border-top: 1px solid rgba(238, 98, 144, .26);
+          border-bottom: 1px solid rgba(238, 98, 144, .26);
         }
       }
       a{
@@ -93,11 +105,14 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        font-size: 1.5em;
+        font-size: 10px;
         letter-spacing: 1px;
+        text-align: center;
         &:hover{
-          background-color: rgba(0,0,0,.12);
+          background-color: rgba(238, 98, 144, .26);
+          color: white;
         }
+        transition: all 250ms;
       }
       &.show{
         display: flex;
@@ -117,6 +132,7 @@
       img{
         max-height: 64px;
         margin-right: 16px;
+        width: 100%;
       }
     }
     @include max-screen(767px) {
